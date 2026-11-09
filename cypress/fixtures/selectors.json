@@ -14,6 +14,22 @@
     "movieOrigin": ".movie__data-origin",
     "hall": ".movie-seances__hall",
     "hallTitle": ".movie-seances__hall-title",
-    "seance": ".movie-seances__time"
+    "seance": ".movie-seances__time",
+    "seanceDisabledClass": "acceptin-button-disabled"
+  },
+  "login": {
+    "section": ".login",
+    "title": ".login__title",
+    "form": ".login__form",
+    "email": "input[name='email']",
+    "password": "input[name='password']",
+    "submit": ".login__button",
+    "errorMessage": "body"
+  },
+  "admin": {
+    "hallControlTitle": "#hall-control .conf-step__title",
+    "hallsList": "#hall-control .conf-step__list li",
+    "openSalesButton": "#start-sales button[data-hall-open='1']",
+    "salesHallNameTemplate": "#start-sales input[data-hall-id='{id}'] + span"
   }
 }

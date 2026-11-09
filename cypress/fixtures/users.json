@@ -5,11 +5,15 @@
   },
   "sadWrongPassword": {
     "email": "qamid@qamid.ru",
-    "password": "wrong"
+    "password": "wrong",
+    "expectedUrl": "/admin/scripts/authorization.php",
+    "expectedError": "Ошибка авторизации!"
   },
   "sadWrongEmail": {
     "email": "nobody@qamid.ru",
-    "password": "qamid"
+    "password": "qamid",
+    "expectedUrl": "/admin/scripts/authorization.php",
+    "expectedError": "Ошибка авторизации!"
   },
   "sadEmpty": {
     "email": "",
