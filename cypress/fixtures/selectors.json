@@ -36,7 +36,7 @@
     "title": ".buying__info-title",
     "start": ".buying__info-start",
     "hall": ".buying__info-hall",
-    "freeChair": ".buying-scheme__wrapper .buying-scheme__chair_standart",
+    "freeChair": ".buying-scheme__wrapper .buying-scheme__chair_standart:not(.buying-scheme__chair_taken)",
     "selectedChair": ".buying-scheme__wrapper .buying-scheme__chair_selected",
     "bookButton": ".acceptin-button"
   },

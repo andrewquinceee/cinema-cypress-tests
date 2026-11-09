@@ -1,3 +1,5 @@
+import selectors from "../fixtures/selectors.json";
+
 describe("Главная страница", () => {
   beforeEach(() => {
     cy.visit("/");
@@ -15,7 +17,7 @@ describe("Главная страница", () => {
   it("подсвечивает сегодняшний день как выбранный", () => {
     cy.sel("main.dayToday").should("have.length", 1);
     cy.sel("main.dayChosen").should("have.length", 1);
-    cy.sel("main.dayToday").should("have.class", "page-nav__day_chosen");
+    cy.sel("main.dayToday").should("match", selectors.main.dayChosen);
   });
 
   it("у каждого дня есть название и число", () => {
@@ -29,8 +31,9 @@ describe("Главная страница", () => {
 
   it("переключает выбранный день по клику", () => {
     cy.sel("main.days").eq(1).click();
-    cy.sel("main.days").eq(1).should("have.class", "page-nav__day_chosen");
-    cy.sel("main.days").eq(0).should("not.have.class", "page-nav__day_chosen");
+    cy.sel("main.dayChosen").should("have.length", 1);
+    cy.sel("main.days").eq(1).should("match", selectors.main.dayChosen);
+    cy.sel("main.days").eq(0).should("not.match", selectors.main.dayChosen);
   });
 
   it("показывает список фильмов", () => {
@@ -39,11 +42,11 @@ describe("Главная страница", () => {
 
   it("у каждого фильма есть название, постер, описание и данные", () => {
     cy.sel("main.movie").each(($movie) => {
-      cy.wrap($movie).find(".movie__title").invoke("text").should("not.be.empty");
-      cy.wrap($movie).find(".movie__poster-image").should("exist");
-      cy.wrap($movie).find(".movie__synopsis").should("exist");
-      cy.wrap($movie).find(".movie__data-duration").should("contain", "мин");
-      cy.wrap($movie).find(".movie__data-origin").should("exist");
+      cy.wrap($movie).find(selectors.main.movieTitle).invoke("text").should("not.be.empty");
+      cy.wrap($movie).find(selectors.main.moviePoster).should("exist");
+      cy.wrap($movie).find(selectors.main.movieSynopsis).should("exist");
+      cy.wrap($movie).find(selectors.main.movieDuration).should("contain", "мин");
+      cy.wrap($movie).find(selectors.main.movieOrigin).should("exist");
     });
   });
 
