@@ -1,0 +1,18 @@
+{
+  "happy": {
+    "email": "qamid@qamid.ru",
+    "password": "qamid"
+  },
+  "sadWrongPassword": {
+    "email": "qamid@qamid.ru",
+    "password": "wrong"
+  },
+  "sadWrongEmail": {
+    "email": "nobody@qamid.ru",
+    "password": "qamid"
+  },
+  "sadEmpty": {
+    "email": "",
+    "password": ""
+  }
+}

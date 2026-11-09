@@ -1,0 +1,19 @@
+{
+  "main": {
+    "header": ".page-header__title",
+    "days": ".page-nav__day",
+    "dayToday": ".page-nav__day_today",
+    "dayChosen": ".page-nav__day_chosen",
+    "dayWeekName": ".page-nav__day-week",
+    "dayNumber": ".page-nav__day-number",
+    "movie": ".movie",
+    "movieTitle": ".movie__title",
+    "moviePoster": ".movie__poster-image",
+    "movieSynopsis": ".movie__synopsis",
+    "movieDuration": ".movie__data-duration",
+    "movieOrigin": ".movie__data-origin",
+    "hall": ".movie-seances__hall",
+    "hallTitle": ".movie-seances__hall-title",
+    "seance": ".movie-seances__time"
+  }
+}
