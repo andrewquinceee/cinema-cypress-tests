@@ -15,7 +15,7 @@
     "hall": ".movie-seances__hall",
     "hallTitle": ".movie-seances__hall-title",
     "seance": ".movie-seances__time",
-    "seanceDisabledClass": "acceptin-button-disabled"
+    "seanceActive": ".movie-seances__time:not(.acceptin-button-disabled)"
   },
   "login": {
     "section": ".login",
@@ -31,5 +31,23 @@
     "hallsList": "#hall-control .conf-step__list li",
     "openSalesButton": "#start-sales button[data-hall-open='1']",
     "salesHallNameTemplate": "#start-sales input[data-hall-id='{id}'] + span"
+  },
+  "booking": {
+    "title": ".buying__info-title",
+    "start": ".buying__info-start",
+    "hall": ".buying__info-hall",
+    "freeChair": ".buying-scheme__wrapper .buying-scheme__chair_standart",
+    "selectedChair": ".buying-scheme__wrapper .buying-scheme__chair_selected",
+    "bookButton": ".acceptin-button"
+  },
+  "ticket": {
+    "checkTitle": ".ticket__check-title",
+    "title": ".ticket__title",
+    "chairs": ".ticket__chairs",
+    "hall": ".ticket__hall",
+    "start": ".ticket__start",
+    "cost": ".ticket__cost",
+    "qr": ".ticket__info-qr",
+    "getCodeButton": ".acceptin-button"
   }
 }

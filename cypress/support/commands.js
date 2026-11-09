@@ -1,10 +1,9 @@
-Cypress.Commands.add("selectorOf", (path) => {
-  const [group, name] = path.split(".");
-  return cy.fixture("selectors").then((selectors) => selectors[group][name]);
-});
+import selectors from "../fixtures/selectors.json";
 
-Cypress.Commands.add("sel", (path) => {
-  return cy.selectorOf(path).then((selector) => cy.get(selector));
+const selectorOf = (path) => path.split(".").reduce((obj, key) => obj[key], selectors);
+
+Cypress.Commands.add("sel", (path, options) => {
+  return cy.get(selectorOf(path), options);
 });
 
 Cypress.Commands.add("login", (user) => {
@@ -25,11 +24,21 @@ Cypress.Commands.add("getOpenHallName", () => {
     .sel("admin.openSalesButton")
     .invoke("attr", "data-hall-id")
     .then((hallId) => {
-      return cy.selectorOf("admin.salesHallNameTemplate").then((template) => {
-        return cy
-          .get(template.replace("{id}", hallId))
-          .invoke("text")
-          .then((text) => text.trim());
-      });
+      const nameSelector = selectorOf("admin.salesHallNameTemplate").replace("{id}", hallId);
+      return cy
+        .get(nameSelector)
+        .invoke("text")
+        .then((text) => text.trim());
     });
+});
+
+Cypress.Commands.add("openSeanceForHall", (hallName) => {
+  cy.sel("main.hall")
+    .filter((index, hall) => {
+      const title = Cypress.$(hall).find(selectorOf("main.hallTitle")).text().trim();
+      return title === hallName;
+    })
+    .find(selectorOf("main.seanceActive"))
+    .first()
+    .click();
 });
