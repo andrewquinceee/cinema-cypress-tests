@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "test:record:parallel": "cypress run --record --parallel --group cinema"
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:electron": "cypress run --browser electron",
+    "test:record:parallel": "cypress run --record --parallel --group cinema",
+    "test:browsers:parallel": "run-p --print-label test:chrome test:firefox"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "cypress": "^16.2.1"
+    "cypress": "^16.2.1",
+    "npm-run-all2": "^9.0.4"
   }
 }
