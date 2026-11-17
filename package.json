@@ -9,7 +9,10 @@
     "test:firefox": "cypress run --browser firefox",
     "test:electron": "cypress run --browser electron",
     "test:record:parallel": "cypress run --record --parallel --group cinema",
-    "test:browsers:parallel": "run-p --print-label --continue-on-error test:chrome test:firefox"
+    "test:browsers:parallel": "run-p --print-label --continue-on-error test:chrome test:firefox",
+    "test:folder1": "cypress run --browser chrome --spec 'cypress/e2e/folder1/**/*.cy.js'",
+    "test:folder2": "cypress run --browser chrome --spec 'cypress/e2e/folder2/**/*.cy.js'",
+    "test:folders:parallel": "run-p --print-label --continue-on-error test:folder1 test:folder2"
   },
   "keywords": [],
   "author": "",
