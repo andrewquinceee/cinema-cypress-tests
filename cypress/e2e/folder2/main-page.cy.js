@@ -1,4 +1,4 @@
-import selectors from "../fixtures/selectors.json";
+import selectors from "../../fixtures/selectors.json";
 
 describe("Главная страница", () => {
   beforeEach(() => {
