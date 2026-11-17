@@ -9,7 +9,7 @@
     "test:firefox": "cypress run --browser firefox",
     "test:electron": "cypress run --browser electron",
     "test:record:parallel": "cypress run --record --parallel --group cinema",
-    "test:browsers:parallel": "run-p --print-label test:chrome test:firefox"
+    "test:browsers:parallel": "run-p --print-label --continue-on-error test:chrome test:firefox"
   },
   "keywords": [],
   "author": "",
